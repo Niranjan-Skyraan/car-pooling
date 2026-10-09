@@ -4,7 +4,8 @@ import { riderSwaggerSpec } from "./swagger/rider.swagger.js";
 import { driverSwaggerSpec } from "./swagger/driver.swagger.js";
 import swaggerUi from "swagger-ui-express";
 import routes from "./routes/index.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 
 // Allow requests from other origins
@@ -29,10 +30,7 @@ app.use(
 
 app.use("/api", routes);
 app.get("/", (_req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "Backend is running",
-  });
+ res.send("welcome")
 });
 
 
