@@ -8,6 +8,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const connectDatabase = async () => {
     try {
         const mongoUri = process.env.MONGODB_URI;
+        console.log(mongoUri);
         if (!mongoUri) {
             throw new Error("MONGODB_URI is not defined in .env");
         }
